@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 spark = (
-    SparkSession.builder.appName("parquet_converter")
+    SparkSession.builder.appName("spark_sess")
     .master("local[*]")
     .config(
         "spark.jars.packages",
