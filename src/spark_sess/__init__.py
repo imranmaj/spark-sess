@@ -5,7 +5,13 @@ spark = (
     .master("local[*]")
     .config(
         "spark.jars.packages",
-        "org.apache.hadoop:hadoop-aws:3.2.2,org.postgresql:postgresql:42.6.0",
+        ",".join(
+            [
+                "org.apache.hadoop:hadoop-aws:3.2.2",
+                "org.postgresql:postgresql:42.6.0",
+                "org.opensearch.client:opensearch-spark-30_2.12:1.3.0",
+            ]
+        ),
     )
     .config(
         "fs.s3a.aws.credentials.provider",
